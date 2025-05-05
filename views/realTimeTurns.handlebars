@@ -1,0 +1,20 @@
+<h3>Ingrese los datos del paciente</h3>
+
+<ul id="turnList">
+    {{#each turnos}}
+    <li id="turn-{{id}}">
+        {{nombre}} - {{fecha}} a las {{hora}}
+        <button onclick="deleteTurn({{id}})">Eliminar</button>
+    </li>
+    {{/each}}
+</ul>
+
+<form id="addTurnForm">
+    <input type="text" id="nombre" placeholder="Nombre del paciente" required>
+    <input type="date" id="fecha" required>
+    <input type="time" id="hora" required>
+    <button type="submit">Agendar Turno</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/app.js"></script>
